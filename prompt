@@ -1,0 +1,38 @@
+Act as a Senior Java Spring Boot Architect. We are building the backend for "EduConnect", a Digital Education & E-Learning Governance System. 
+ 
+Your goal is to generate production-ready, highly modular Spring Boot code that I can test via Postman. We will build this iteratively. DO NOT generate the entire project at once. Wait for my command to proceed to each phase.
+ 
+**Technical Stack & Rules:**
+1.  **Framework:** Java 17+, Spring Boot 3.x, Spring Web, Spring Data JPA, Spring Security, Lombok.
+2.  **Database:** PostgreSQL/MySQL (assume relational).
+3.  **Security:** stateless REST API using JWT (JSON Web Tokens) for authentication and Role-Based Access Control (RBAC). 
+4.  **Roles:** STUDENT, TEACHER, ADMIN, MANAGER, COMPLIANCE, AUDITOR.
+5.  **Architecture:** Strict n-tier REST architecture. Use MapStruct or manual builders for Entity <-> DTO conversion. Never expose raw Entities in Controllers.
+ 
+**Strict Package Structure:**
+All code must belong to the following structure under `com.cognizant.educonnect`:
+* `.configuration` (Security chains, JWT filters, Bean definitions)
+* `.controller` (REST APIs, mapped to /api/v1/...)
+* `.dto` (Request/Response DTOs, Login/Register payloads)
+* `.entity` (JPA Entities with relationships)
+* `.exception` (GlobalExceptionHandler using @ControllerAdvice, Custom Exceptions)
+* `.repository` (Spring Data JPA interfaces - Note: Please add this to the structure as it is required for JPA)
+* `.service` (Business logic interfaces and `impl` classes)
+* `.util` (JWT utility classes, constants)
+ 
+**Development Phases:**
+ 
+**Phase 1: Identity, Security & Base Structure (IAM)**
+Generate the `User` entity, `Role` enum, JWT Utility class, Custom UserDetailsService, Security Configuration (filtering, unauthorized handlers), AuthController (Login/Register endpoints), and AuthResponse DTOs. 
+ 
+**Phase 2: Core Domain (Students & Courses)**
+Generate `Student`, `Course`, and `Enrollment` entities with proper JPA relationships (OneToOne, ManyToOne). Generate the corresponding DTOs, Services, and Controllers. Ensure `@PreAuthorize` tags are on the controllers (e.g., only TEACHER or ADMIN can create a course).
+ 
+**Phase 3: Digital Content & Assessments**
+Generate `Content`, `Assessment`, and `Submission` entities. Implement service logic to handle file URI storage and validation.
+ 
+**Phase 4: Governance & Reporting**
+Generate polymorphic `Report` entities, `ComplianceRecord`, and `AuditLog`. Implement custom JPA queries to aggregate metrics for the dashboard APIs.
+ 
+**Action Required:**
+Acknowledge these rules. If you understand, output ONLY the complete code for all phases. Ensure all imports are present and the code is ready to run and test in Postman.
