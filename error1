@@ -1,0 +1,664 @@
+PS C:\Users\2478136\Downloads\educonnect-springboot (1)\educonnect> mvn clean install -DskipTests
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::staticFieldBase has been called by com.google.inject.internal.aop.HiddenClassDefiner (file:/C:/Users/2478136/Downloads/Open%20Source_Apache%20Software%20Foundation_Apache%20Maven_Windows_4.0.0_apache-maven-4.0.0-rc-4-bin/apache-maven-4.0.0-rc-4/lib/guice-5.1.0-classes.jar)
+WARNING: Please consider reporting this to the maintainers of class com.google.inject.internal.aop.HiddenClassDefiner
+WARNING: sun.misc.Unsafe::staticFieldBase will be removed in a future release
+[WARNING] Unable to find the root directory. Create a .mvn directory in the root directory or add the root="true" attribute on the root project's model to identify it.
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------------------------------< com.educonnect:educonnect >-----------------------------------------------
+[INFO] Building EduConnect 1.0.0
+[INFO]   from pom.xml
+[INFO] ---------------------------------------------------------[ jar ]----------------------------------------------------------
+[INFO] 
+[INFO] --- clean:3.3.2:clean (default-clean) @ educonnect ---
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/4.0.0/plexus-utils-4.0.0.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/4.0.0/plexus-utils-4.0.0.jar (192 kB at 65.3 kB/s)
+[INFO] Deleting C:\Users\2478136\Downloads\educonnect-springboot (1)\educonnect\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ educonnect ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ educonnect ---
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.3.4/maven-shared-utils-3.3.4.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.3.4/maven-shared-utils-3.3.4.jar (153 kB at 403.9 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.6/commons-io-2.6.jar
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.5.5/plexus-component-annotations-1.5.5.jar
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-java/1.1.2/plexus-java-1.1.2.jar
+Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.4/asm-9.4.jar
+Downloading from central: https://repo.maven.apache.org/maven2/com/thoughtworks/qdox/qdox/2.0.3/qdox-2.0.3.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.5.5/plexus-component-annotations-1.5.5.jar (4.2 kB at 74.1 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.13.0/plexus-compiler-api-2.13.0.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.13.0/plexus-compiler-api-2.13.0.jar (27 kB at 215.3 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.5.0/plexus-utils-3.5.0.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.5.0/plexus-utils-3.5.0.jar (267 kB at 598.6 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/2.13.0/plexus-compiler-manager-2.13.0.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-java/1.1.2/plexus-java-1.1.2.jar (55 kB at 77.4 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.13.0/plexus-compiler-javac-2.13.0.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/2.13.0/plexus-compiler-manager-2.13.0.jar (4.7 kB at 5.9 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.13.0/plexus-compiler-javac-2.13.0.jar (23 kB at 21.8 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.4/asm-9.4.jar (122 kB at 116.9 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.6/commons-io-2.6.jar (215 kB at 195.6 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/com/thoughtworks/qdox/qdox/2.0.3/qdox-2.0.3.jar (334 kB at 302.7 kB/s)
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 104 source files with javac [debug release 21] to target\classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[31,58] cannot find symbol
+  symbol:   method getCourseId()
+  location: variable request of type com.educonnect.dto.request.AssessmentRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[33,43] cannot find symbol
+  symbol:   method builder()
+  location: class com.educonnect.entity.Assessment
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[34,46] cannot find symbol
+  symbol:   method getTitle()
+  location: variable request of type com.educonnect.dto.request.AssessmentRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[35,30] cannot find symbol
+  symbol:   method getType()
+  location: variable request of type com.educonnect.dto.request.AssessmentRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[35,57] cannot find symbol
+  symbol:   method getDueDate()
+  location: variable request of type com.educonnect.dto.request.AssessmentRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[36,34] cannot find symbol
+  symbol:   method getMaxScore()
+  location: variable request of type com.educonnect.dto.request.AssessmentRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[54,27] cannot find symbol
+  symbol:   method getTitle()
+  location: variable request of type com.educonnect.dto.request.AssessmentRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[55,26] cannot find symbol
+  symbol:   method getType()
+  location: variable request of type com.educonnect.dto.request.AssessmentRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[56,29] cannot find symbol
+  symbol:   method getDueDate()
+  location: variable request of type com.educonnect.dto.request.AssessmentRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[57,30] cannot find symbol
+  symbol:   method getMaxScore()
+  location: variable request of type com.educonnect.dto.request.AssessmentRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[65,10] cannot find symbol
+  symbol:   method setStatus(com.educonnect.entity.Assessment.AssessmentStatus)
+  location: variable a of type com.educonnect.entity.Assessment
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[72,49] cannot find symbol
+  symbol:   method getAssessmentId()
+  location: variable request of type com.educonnect.dto.request.SubmissionRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[73,61] cannot find symbol
+  symbol:   method getStudentId()
+  location: variable request of type com.educonnect.dto.request.SubmissionRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[77,24] cannot find symbol
+  symbol:   method getAssessmentId()
+  location: variable request of type com.educonnect.dto.request.SubmissionRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[77,51] cannot find symbol
+  symbol:   method getStudentId()
+  location: variable request of type com.educonnect.dto.request.SubmissionRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[81,43] cannot find symbol
+  symbol:   method builder()
+  location: class com.educonnect.entity.Submission
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[83,33] cannot find symbol
+  symbol:   method getFileUri()
+  location: variable request of type com.educonnect.dto.request.SubmissionRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[104,36] cannot find symbol
+  symbol:   method getScore()
+  location: variable request of type com.educonnect.dto.request.GradeRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[105,39] cannot find symbol
+  symbol:   method getFeedback()
+  location: variable request of type com.educonnect.dto.request.GradeRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[106,19] cannot find symbol
+  symbol:   method setStatus(com.educonnect.entity.Submission.SubmissionStatus)
+  location: variable submission of type com.educonnect.entity.Submission
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[116,34] cannot find symbol
+  symbol:   method builder()
+  location: class com.educonnect.dto.response.AssessmentResponse
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[117,32] cannot find symbol
+  symbol:   method getAssessmentId()
+  location: variable a of type com.educonnect.entity.Assessment
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[117,62] cannot find symbol
+  symbol:   method getCourse()
+  location: variable a of type com.educonnect.entity.Assessment
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[118,31] cannot find symbol
+  symbol:   method getCourse()
+  location: variable a of type com.educonnect.entity.Assessment
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[118,63] cannot find symbol
+  symbol:   method getTitle()
+  location: variable a of type com.educonnect.entity.Assessment
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[119,24] cannot find symbol
+  symbol:   method getType()
+  location: variable a of type com.educonnect.entity.Assessment
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[119,45] cannot find symbol
+  symbol:   method getDueDate()
+  location: variable a of type com.educonnect.entity.Assessment
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[120,28] cannot find symbol
+  symbol:   method getMaxScore()
+  location: variable a of type com.educonnect.entity.Assessment
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[120,52] cannot find symbol
+  symbol:   method getStatus()
+  location: variable a of type com.educonnect.entity.Assessment
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[124,34] cannot find symbol
+  symbol:   method builder()
+  location: class com.educonnect.dto.response.SubmissionResponse
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[125,32] cannot find symbol
+  symbol:   method getSubmissionId()
+  location: variable s of type com.educonnect.entity.Submission
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[126,32] cannot find symbol
+  symbol:   method getAssessment()
+  location: variable s of type com.educonnect.entity.Submission
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[127,35] cannot find symbol
+  symbol:   method getAssessment()
+  location: variable s of type com.educonnect.entity.Submission
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[128,29] cannot find symbol
+  symbol:   method getStudent()
+  location: variable s of type com.educonnect.entity.Submission
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[129,31] cannot find symbol
+  symbol:   method getStudent()
+  location: variable s of type com.educonnect.entity.Submission
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[130,27] cannot find symbol
+  symbol:   method getFileUri()
+  location: variable s of type com.educonnect.entity.Submission
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[130,58] cannot find symbol
+  symbol:   method getSubmissionDate()
+  location: variable s of type com.educonnect.entity.Submission
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[131,25] cannot find symbol
+  symbol:   method getScore()
+  location: variable s of type com.educonnect.entity.Submission
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[131,48] cannot find symbol
+  symbol:   method getFeedback()
+  location: variable s of type com.educonnect.entity.Submission
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[131,72] cannot find symbol
+  symbol:   method getStatus()
+  location: variable s of type com.educonnect.entity.Submission
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/exception/GlobalExceptionHandler.java:[61,9] cannot find symbol
+  symbol:   variable log
+  location: class com.educonnect.exception.GlobalExceptionHandler
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/ReportServiceImpl.java:[52,36] cannot find symbol
+  symbol:   method builder()
+  location: class com.educonnect.entity.Report
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/dto/response/ApiResponse.java:[15,27] cannot find symbol
+  symbol:   method <T>builder()
+  location: class com.educonnect.dto.response.ApiResponse
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/dto/response/ApiResponse.java:[19,27] cannot find symbol
+  symbol:   method <T>builder()
+  location: class com.educonnect.dto.response.ApiResponse
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/controller/CurriculumController.java:[41,35] cannot find symbol
+  symbol:   method builder()
+  location: class com.educonnect.entity.Curriculum
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/controller/CurriculumController.java:[42,19] cannot find symbol
+  symbol:   method setTopicsJson(java.lang.String)
+  location: variable curriculum of type com.educonnect.entity.Curriculum
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/security/JwtAuthFilter.java:[57,13] cannot find symbol
+  symbol:   variable log
+  location: class com.educonnect.security.JwtAuthFilter
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/CourseServiceImpl.java:[28,55] cannot find symbol
+  symbol:   method getTeacherId()
+  location: variable request of type com.educonnect.dto.request.CourseRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/CourseServiceImpl.java:[29,97] cannot find symbol
+  symbol:   method getTeacherId()
+  location: variable request of type com.educonnect.dto.request.CourseRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/CourseServiceImpl.java:[31,31] cannot find symbol
+  symbol:   method builder()
+  location: class com.educonnect.entity.Course
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/CourseServiceImpl.java:[32,31] cannot find symbol
+  symbol:   method getTitle()
+  location: variable request of type com.educonnect.dto.request.CourseRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/CourseServiceImpl.java:[33,37] cannot find symbol
+  symbol:   method getDescription()
+  location: variable request of type com.educonnect.dto.request.CourseRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/CourseServiceImpl.java:[35,35] cannot find symbol
+  symbol:   method getStartDate()
+  location: variable request of type com.educonnect.dto.request.CourseRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/CourseServiceImpl.java:[36,33] cannot find symbol
+  symbol:   method getEndDate()
+  location: variable request of type com.educonnect.dto.request.CourseRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/CourseServiceImpl.java:[61,32] cannot find symbol
+  symbol:   method getTitle()
+  location: variable request of type com.educonnect.dto.request.CourseRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/CourseServiceImpl.java:[62,38] cannot find symbol
+  symbol:   method getDescription()
+  location: variable request of type com.educonnect.dto.request.CourseRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/CourseServiceImpl.java:[63,36] cannot find symbol
+  symbol:   method getStartDate()
+  location: variable request of type com.educonnect.dto.request.CourseRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/CourseServiceImpl.java:[64,34] cannot find symbol
+  symbol:   method getEndDate()
+  location: variable request of type com.educonnect.dto.request.CourseRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/CourseServiceImpl.java:[72,15] cannot find symbol
+  symbol:   method setStatus(com.educonnect.entity.Course.CourseStatus)
+  location: variable course of type com.educonnect.entity.Course
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/CourseServiceImpl.java:[87,30] cannot find symbol
+  symbol:   method builder()
+  location: class com.educonnect.dto.response.CourseResponse
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/CourseServiceImpl.java:[88,33] cannot find symbol
+  symbol:   method getCourseId()
+  location: variable course of type com.educonnect.entity.Course
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/CourseServiceImpl.java:[89,30] cannot find symbol
+  symbol:   method getTitle()
+  location: variable course of type com.educonnect.entity.Course
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/CourseServiceImpl.java:[90,36] cannot find symbol
+  symbol:   method getDescription()
+  location: variable course of type com.educonnect.entity.Course
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/CourseServiceImpl.java:[91,34] cannot find symbol
+  symbol:   method getTeacher()
+  location: variable course of type com.educonnect.entity.Course
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/CourseServiceImpl.java:[92,36] cannot find symbol
+  symbol:   method getTeacher()
+  location: variable course of type com.educonnect.entity.Course
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/CourseServiceImpl.java:[93,34] cannot find symbol
+  symbol:   method getStartDate()
+  location: variable course of type com.educonnect.entity.Course
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/CourseServiceImpl.java:[94,32] cannot find symbol
+  symbol:   method getEndDate()
+  location: variable course of type com.educonnect.entity.Course
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/CourseServiceImpl.java:[95,31] cannot find symbol
+  symbol:   method getStatus()
+  location: variable course of type com.educonnect.entity.Course
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/CourseServiceImpl.java:[96,34] cannot find symbol
+  symbol:   method getCreatedAt()
+  location: variable course of type com.educonnect.entity.Course
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/UserServiceImpl.java:[41,13] cannot find symbol
+  symbol:   method setStatus(com.educonnect.entity.UserStatus)
+  location: variable user of type com.educonnect.entity.User
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/UserServiceImpl.java:[49,13] cannot find symbol
+  symbol:   method setStatus(com.educonnect.entity.UserStatus)
+  location: variable user of type com.educonnect.entity.User
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/UserServiceImpl.java:[59,28] cannot find symbol
+  symbol:   method builder()
+  location: class com.educonnect.dto.response.UserResponse
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/UserServiceImpl.java:[60,26] cannot find symbol
+  symbol:   method getUserId()
+  location: variable u of type com.educonnect.entity.User
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/UserServiceImpl.java:[60,46] cannot find symbol
+  symbol:   method getName()
+  location: variable u of type com.educonnect.entity.User
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/UserServiceImpl.java:[61,24] cannot find symbol
+  symbol:   method getRole()
+  location: variable u of type com.educonnect.entity.User
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/UserServiceImpl.java:[61,43] cannot find symbol
+  symbol:   method getEmail()
+  location: variable u of type com.educonnect.entity.User
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/UserServiceImpl.java:[62,25] cannot find symbol
+  symbol:   method getPhone()
+  location: variable u of type com.educonnect.entity.User
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/UserServiceImpl.java:[62,46] cannot find symbol
+  symbol:   method getStatus()
+  location: variable u of type com.educonnect.entity.User
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/EnrollmentServiceImpl.java:[31,83] cannot find symbol
+  symbol:   method getStudentId()
+  location: variable request of type com.educonnect.dto.request.EnrollmentRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/EnrollmentServiceImpl.java:[31,107] cannot find symbol
+  symbol:   method getCourseId()
+  location: variable request of type com.educonnect.dto.request.EnrollmentRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/EnrollmentServiceImpl.java:[34,61] cannot find symbol
+  symbol:   method getStudentId()
+  location: variable request of type com.educonnect.dto.request.EnrollmentRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/EnrollmentServiceImpl.java:[36,58] cannot find symbol
+  symbol:   method getCourseId()
+  location: variable request of type com.educonnect.dto.request.EnrollmentRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/EnrollmentServiceImpl.java:[39,43] cannot find symbol
+  symbol:   method builder()
+  location: class com.educonnect.entity.Enrollment
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/EnrollmentServiceImpl.java:[58,19] cannot find symbol
+  symbol:   method setStatus(com.educonnect.entity.Enrollment.EnrollmentStatus)
+  location: variable enrollment of type com.educonnect.entity.Enrollment
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/EnrollmentServiceImpl.java:[67,19] cannot find symbol
+  symbol:   method setStatus(com.educonnect.entity.Enrollment.EnrollmentStatus)
+  location: variable enrollment of type com.educonnect.entity.Enrollment
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/EnrollmentServiceImpl.java:[72,34] cannot find symbol
+  symbol:   method builder()
+  location: class com.educonnect.dto.response.EnrollmentResponse
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/EnrollmentServiceImpl.java:[73,32] cannot find symbol
+  symbol:   method getEnrollmentId()
+  location: variable e of type com.educonnect.entity.Enrollment
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/EnrollmentServiceImpl.java:[74,29] cannot find symbol
+  symbol:   method getStudent()
+  location: variable e of type com.educonnect.entity.Enrollment
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/EnrollmentServiceImpl.java:[75,31] cannot find symbol
+  symbol:   method getStudent()
+  location: variable e of type com.educonnect.entity.Enrollment
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/EnrollmentServiceImpl.java:[76,28] cannot find symbol
+  symbol:   method getCourse()
+  location: variable e of type com.educonnect.entity.Enrollment
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/EnrollmentServiceImpl.java:[77,31] cannot find symbol
+  symbol:   method getCourse()
+  location: variable e of type com.educonnect.entity.Enrollment
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/EnrollmentServiceImpl.java:[78,34] cannot find symbol
+  symbol:   method getEnrollmentDate()
+  location: variable e of type com.educonnect.entity.Enrollment
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/EnrollmentServiceImpl.java:[79,26] cannot find symbol
+  symbol:   method getStatus()
+  location: variable e of type com.educonnect.entity.Enrollment
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/security/UserDetailsServiceImpl.java:[26,31] cannot find symbol
+  symbol:   method getEmail()
+  location: variable user of type com.educonnect.entity.User
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/security/UserDetailsServiceImpl.java:[27,31] cannot find symbol
+  symbol:   method getPassword()
+  location: variable user of type com.educonnect.entity.User
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/security/UserDetailsServiceImpl.java:[28,79] cannot find symbol
+  symbol:   method getRole()
+  location: variable user of type com.educonnect.entity.User
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/ComplianceServiceImpl.java:[32,51] cannot find symbol
+  symbol:   method builder()
+  location: class com.educonnect.entity.ComplianceRecord
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/ComplianceServiceImpl.java:[33,34] cannot find symbol
+  symbol:   method getEntityId()
+  location: variable request of type com.educonnect.dto.request.ComplianceRecordRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/ComplianceServiceImpl.java:[33,62] cannot find symbol
+  symbol:   method getType()
+  location: variable request of type com.educonnect.dto.request.ComplianceRecordRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/ComplianceServiceImpl.java:[34,32] cannot find symbol
+  symbol:   method getResult()
+  location: variable request of type com.educonnect.dto.request.ComplianceRecordRequest
+[INFO] 100 errors 
+[INFO] -------------------------------------------------------------
+[INFO] --------------------------------------------------------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] --------------------------------------------------------------------------------------------------------------------------
+[INFO] Total time:  14.273 s
+[INFO] Finished at: 2026-03-17T21:38:50+05:30
+[INFO] --------------------------------------------------------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile (default-compile) on project educonnect: Compilation failure: Compilation failure:                                                                                                               
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[31,58] cannot find symbol
+[ERROR]   symbol:   method getCourseId()
+[ERROR]   location: variable request of type com.educonnect.dto.request.AssessmentRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[33,43] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.educonnect.entity.Assessment
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[34,46] cannot find symbol
+[ERROR]   symbol:   method getTitle()
+[ERROR]   location: variable request of type com.educonnect.dto.request.AssessmentRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[35,30] cannot find symbol
+[ERROR]   symbol:   method getType()
+[ERROR]   location: variable request of type com.educonnect.dto.request.AssessmentRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[35,57] cannot find symbol
+[ERROR]   symbol:   method getDueDate()
+[ERROR]   location: variable request of type com.educonnect.dto.request.AssessmentRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[36,34] cannot find symbol
+[ERROR]   symbol:   method getMaxScore()
+[ERROR]   location: variable request of type com.educonnect.dto.request.AssessmentRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[54,27] cannot find symbol
+[ERROR]   symbol:   method getTitle()
+[ERROR]   location: variable request of type com.educonnect.dto.request.AssessmentRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[55,26] cannot find symbol
+[ERROR]   symbol:   method getType()
+[ERROR]   location: variable request of type com.educonnect.dto.request.AssessmentRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[56,29] cannot find symbol
+[ERROR]   symbol:   method getDueDate()
+[ERROR]   location: variable request of type com.educonnect.dto.request.AssessmentRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[57,30] cannot find symbol
+[ERROR]   symbol:   method getMaxScore()
+[ERROR]   location: variable request of type com.educonnect.dto.request.AssessmentRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[65,10] cannot find symbol
+[ERROR]   symbol:   method setStatus(com.educonnect.entity.Assessment.AssessmentStatus)
+[ERROR]   location: variable a of type com.educonnect.entity.Assessment
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[72,49] cannot find symbol
+[ERROR]   symbol:   method getAssessmentId()
+[ERROR]   location: variable request of type com.educonnect.dto.request.SubmissionRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[73,61] cannot find symbol
+[ERROR]   symbol:   method getStudentId()
+[ERROR]   location: variable request of type com.educonnect.dto.request.SubmissionRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[77,24] cannot find symbol
+[ERROR]   symbol:   method getAssessmentId()
+[ERROR]   location: variable request of type com.educonnect.dto.request.SubmissionRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[77,51] cannot find symbol
+[ERROR]   symbol:   method getStudentId()
+[ERROR]   location: variable request of type com.educonnect.dto.request.SubmissionRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[81,43] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.educonnect.entity.Submission
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[83,33] cannot find symbol
+[ERROR]   symbol:   method getFileUri()
+[ERROR]   location: variable request of type com.educonnect.dto.request.SubmissionRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[104,36] cannot find symbol
+[ERROR]   symbol:   method getScore()
+[ERROR]   location: variable request of type com.educonnect.dto.request.GradeRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[105,39] cannot find symbol
+[ERROR]   symbol:   method getFeedback()
+[ERROR]   location: variable request of type com.educonnect.dto.request.GradeRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[106,19] cannot find symbol
+[ERROR]   symbol:   method setStatus(com.educonnect.entity.Submission.SubmissionStatus)
+[ERROR]   location: variable submission of type com.educonnect.entity.Submission
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[116,34] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.educonnect.dto.response.AssessmentResponse
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[117,32] cannot find symbol
+[ERROR]   symbol:   method getAssessmentId()
+[ERROR]   location: variable a of type com.educonnect.entity.Assessment
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[117,62] cannot find symbol
+[ERROR]   symbol:   method getCourse()
+[ERROR]   location: variable a of type com.educonnect.entity.Assessment
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[118,31] cannot find symbol
+[ERROR]   symbol:   method getCourse()
+[ERROR]   location: variable a of type com.educonnect.entity.Assessment
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[118,63] cannot find symbol
+[ERROR]   symbol:   method getTitle()
+[ERROR]   location: variable a of type com.educonnect.entity.Assessment
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[119,24] cannot find symbol
+[ERROR]   symbol:   method getType()
+[ERROR]   location: variable a of type com.educonnect.entity.Assessment
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[119,45] cannot find symbol
+[ERROR]   symbol:   method getDueDate()
+[ERROR]   location: variable a of type com.educonnect.entity.Assessment
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[120,28] cannot find symbol
+[ERROR]   symbol:   method getMaxScore()
+[ERROR]   location: variable a of type com.educonnect.entity.Assessment
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[120,52] cannot find symbol
+[ERROR]   symbol:   method getStatus()
+[ERROR]   location: variable a of type com.educonnect.entity.Assessment
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[124,34] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.educonnect.dto.response.SubmissionResponse
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[125,32] cannot find symbol
+[ERROR]   symbol:   method getSubmissionId()
+[ERROR]   location: variable s of type com.educonnect.entity.Submission
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[126,32] cannot find symbol
+[ERROR]   symbol:   method getAssessment()
+[ERROR]   location: variable s of type com.educonnect.entity.Submission
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[127,35] cannot find symbol
+[ERROR]   symbol:   method getAssessment()
+[ERROR]   location: variable s of type com.educonnect.entity.Submission
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[128,29] cannot find symbol
+[ERROR]   symbol:   method getStudent()
+[ERROR]   location: variable s of type com.educonnect.entity.Submission
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[129,31] cannot find symbol
+[ERROR]   symbol:   method getStudent()
+[ERROR]   location: variable s of type com.educonnect.entity.Submission
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[130,27] cannot find symbol
+[ERROR]   symbol:   method getFileUri()
+[ERROR]   location: variable s of type com.educonnect.entity.Submission
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[130,58] cannot find symbol
+[ERROR]   symbol:   method getSubmissionDate()
+[ERROR]   location: variable s of type com.educonnect.entity.Submission
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[131,25] cannot find symbol
+[ERROR]   symbol:   method getScore()
+[ERROR]   location: variable s of type com.educonnect.entity.Submission
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[131,48] cannot find symbol
+[ERROR]   symbol:   method getFeedback()
+[ERROR]   location: variable s of type com.educonnect.entity.Submission
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/AssessmentServiceImpl.java:[131,72] cannot find symbol
+[ERROR]   symbol:   method getStatus()
+[ERROR]   location: variable s of type com.educonnect.entity.Submission
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/exception/GlobalExceptionHandler.java:[61,9] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.educonnect.exception.GlobalExceptionHandler
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/ReportServiceImpl.java:[52,36] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.educonnect.entity.Report
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/dto/response/ApiResponse.java:[15,27] cannot find symbol
+[ERROR]   symbol:   method <T>builder()
+[ERROR]   location: class com.educonnect.dto.response.ApiResponse
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/dto/response/ApiResponse.java:[19,27] cannot find symbol
+[ERROR]   symbol:   method <T>builder()
+[ERROR]   location: class com.educonnect.dto.response.ApiResponse
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/controller/CurriculumController.java:[41,35] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.educonnect.entity.Curriculum
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/controller/CurriculumController.java:[42,19] cannot find symbol
+[ERROR]   symbol:   method setTopicsJson(java.lang.String)
+[ERROR]   location: variable curriculum of type com.educonnect.entity.Curriculum
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/security/JwtAuthFilter.java:[57,13] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.educonnect.security.JwtAuthFilter
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/CourseServiceImpl.java:[28,55] cannot find symbol
+[ERROR]   symbol:   method getTeacherId()
+[ERROR]   location: variable request of type com.educonnect.dto.request.CourseRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/CourseServiceImpl.java:[29,97] cannot find symbol
+[ERROR]   symbol:   method getTeacherId()
+[ERROR]   location: variable request of type com.educonnect.dto.request.CourseRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/CourseServiceImpl.java:[31,31] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.educonnect.entity.Course
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/CourseServiceImpl.java:[32,31] cannot find symbol
+[ERROR]   symbol:   method getTitle()
+[ERROR]   location: variable request of type com.educonnect.dto.request.CourseRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/CourseServiceImpl.java:[33,37] cannot find symbol
+[ERROR]   symbol:   method getDescription()
+[ERROR]   location: variable request of type com.educonnect.dto.request.CourseRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/CourseServiceImpl.java:[35,35] cannot find symbol
+[ERROR]   symbol:   method getStartDate()
+[ERROR]   location: variable request of type com.educonnect.dto.request.CourseRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/CourseServiceImpl.java:[36,33] cannot find symbol
+[ERROR]   symbol:   method getEndDate()
+[ERROR]   location: variable request of type com.educonnect.dto.request.CourseRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/CourseServiceImpl.java:[61,32] cannot find symbol
+[ERROR]   symbol:   method getTitle()
+[ERROR]   location: variable request of type com.educonnect.dto.request.CourseRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/CourseServiceImpl.java:[62,38] cannot find symbol
+[ERROR]   symbol:   method getDescription()
+[ERROR]   location: variable request of type com.educonnect.dto.request.CourseRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/CourseServiceImpl.java:[63,36] cannot find symbol
+[ERROR]   symbol:   method getStartDate()
+[ERROR]   location: variable request of type com.educonnect.dto.request.CourseRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/CourseServiceImpl.java:[64,34] cannot find symbol
+[ERROR]   symbol:   method getEndDate()
+[ERROR]   location: variable request of type com.educonnect.dto.request.CourseRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/CourseServiceImpl.java:[72,15] cannot find symbol
+[ERROR]   symbol:   method setStatus(com.educonnect.entity.Course.CourseStatus)
+[ERROR]   location: variable course of type com.educonnect.entity.Course
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/CourseServiceImpl.java:[87,30] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.educonnect.dto.response.CourseResponse
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/CourseServiceImpl.java:[88,33] cannot find symbol
+[ERROR]   symbol:   method getCourseId()
+[ERROR]   location: variable course of type com.educonnect.entity.Course
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/CourseServiceImpl.java:[89,30] cannot find symbol
+[ERROR]   symbol:   method getTitle()
+[ERROR]   location: variable course of type com.educonnect.entity.Course
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/CourseServiceImpl.java:[90,36] cannot find symbol
+[ERROR]   symbol:   method getDescription()
+[ERROR]   location: variable course of type com.educonnect.entity.Course
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/CourseServiceImpl.java:[91,34] cannot find symbol
+[ERROR]   symbol:   method getTeacher()
+[ERROR]   location: variable course of type com.educonnect.entity.Course
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/CourseServiceImpl.java:[92,36] cannot find symbol
+[ERROR]   symbol:   method getTeacher()
+[ERROR]   location: variable course of type com.educonnect.entity.Course
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/CourseServiceImpl.java:[93,34] cannot find symbol
+[ERROR]   symbol:   method getStartDate()
+[ERROR]   location: variable course of type com.educonnect.entity.Course
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/CourseServiceImpl.java:[94,32] cannot find symbol
+[ERROR]   symbol:   method getEndDate()
+[ERROR]   location: variable course of type com.educonnect.entity.Course
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/CourseServiceImpl.java:[95,31] cannot find symbol
+[ERROR]   symbol:   method getStatus()
+[ERROR]   location: variable course of type com.educonnect.entity.Course
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/CourseServiceImpl.java:[96,34] cannot find symbol
+[ERROR]   symbol:   method getCreatedAt()
+[ERROR]   location: variable course of type com.educonnect.entity.Course
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/UserServiceImpl.java:[41,13] cannot find symbol
+[ERROR]   symbol:   method setStatus(com.educonnect.entity.UserStatus)
+[ERROR]   location: variable user of type com.educonnect.entity.User
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/UserServiceImpl.java:[49,13] cannot find symbol
+[ERROR]   symbol:   method setStatus(com.educonnect.entity.UserStatus)
+[ERROR]   location: variable user of type com.educonnect.entity.User
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/UserServiceImpl.java:[59,28] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.educonnect.dto.response.UserResponse
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/UserServiceImpl.java:[60,26] cannot find symbol
+[ERROR]   symbol:   method getUserId()
+[ERROR]   location: variable u of type com.educonnect.entity.User
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/UserServiceImpl.java:[60,46] cannot find symbol
+[ERROR]   symbol:   method getName()
+[ERROR]   location: variable u of type com.educonnect.entity.User
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/UserServiceImpl.java:[61,24] cannot find symbol
+[ERROR]   symbol:   method getRole()
+[ERROR]   location: variable u of type com.educonnect.entity.User
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/UserServiceImpl.java:[61,43] cannot find symbol
+[ERROR]   symbol:   method getEmail()
+[ERROR]   location: variable u of type com.educonnect.entity.User
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/UserServiceImpl.java:[62,25] cannot find symbol
+[ERROR]   symbol:   method getPhone()
+[ERROR]   location: variable u of type com.educonnect.entity.User
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/UserServiceImpl.java:[62,46] cannot find symbol
+[ERROR]   symbol:   method getStatus()
+[ERROR]   location: variable u of type com.educonnect.entity.User
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/EnrollmentServiceImpl.java:[31,83] cannot find symbol
+[ERROR]   symbol:   method getStudentId()
+[ERROR]   location: variable request of type com.educonnect.dto.request.EnrollmentRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/EnrollmentServiceImpl.java:[31,107] cannot find symbol
+[ERROR]   symbol:   method getCourseId()
+[ERROR]   location: variable request of type com.educonnect.dto.request.EnrollmentRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/EnrollmentServiceImpl.java:[34,61] cannot find symbol
+[ERROR]   symbol:   method getStudentId()
+[ERROR]   location: variable request of type com.educonnect.dto.request.EnrollmentRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/EnrollmentServiceImpl.java:[36,58] cannot find symbol
+[ERROR]   symbol:   method getCourseId()
+[ERROR]   location: variable request of type com.educonnect.dto.request.EnrollmentRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/EnrollmentServiceImpl.java:[39,43] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.educonnect.entity.Enrollment
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/EnrollmentServiceImpl.java:[58,19] cannot find symbol
+[ERROR]   symbol:   method setStatus(com.educonnect.entity.Enrollment.EnrollmentStatus)
+[ERROR]   location: variable enrollment of type com.educonnect.entity.Enrollment
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/EnrollmentServiceImpl.java:[67,19] cannot find symbol
+[ERROR]   symbol:   method setStatus(com.educonnect.entity.Enrollment.EnrollmentStatus)
+[ERROR]   location: variable enrollment of type com.educonnect.entity.Enrollment
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/EnrollmentServiceImpl.java:[72,34] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.educonnect.dto.response.EnrollmentResponse
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/EnrollmentServiceImpl.java:[73,32] cannot find symbol
+[ERROR]   symbol:   method getEnrollmentId()
+[ERROR]   location: variable e of type com.educonnect.entity.Enrollment
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/EnrollmentServiceImpl.java:[74,29] cannot find symbol
+[ERROR]   symbol:   method getStudent()
+[ERROR]   location: variable e of type com.educonnect.entity.Enrollment
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/EnrollmentServiceImpl.java:[75,31] cannot find symbol
+[ERROR]   symbol:   method getStudent()
+[ERROR]   location: variable e of type com.educonnect.entity.Enrollment
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/EnrollmentServiceImpl.java:[76,28] cannot find symbol
+[ERROR]   symbol:   method getCourse()
+[ERROR]   location: variable e of type com.educonnect.entity.Enrollment
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/EnrollmentServiceImpl.java:[77,31] cannot find symbol
+[ERROR]   symbol:   method getCourse()
+[ERROR]   location: variable e of type com.educonnect.entity.Enrollment
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/EnrollmentServiceImpl.java:[78,34] cannot find symbol
+[ERROR]   symbol:   method getEnrollmentDate()
+[ERROR]   location: variable e of type com.educonnect.entity.Enrollment
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/EnrollmentServiceImpl.java:[79,26] cannot find symbol
+[ERROR]   symbol:   method getStatus()
+[ERROR]   location: variable e of type com.educonnect.entity.Enrollment
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/security/UserDetailsServiceImpl.java:[26,31] cannot find symbol
+[ERROR]   symbol:   method getEmail()
+[ERROR]   location: variable user of type com.educonnect.entity.User
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/security/UserDetailsServiceImpl.java:[27,31] cannot find symbol
+[ERROR]   symbol:   method getPassword()
+[ERROR]   location: variable user of type com.educonnect.entity.User
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/security/UserDetailsServiceImpl.java:[28,79] cannot find symbol
+[ERROR]   symbol:   method getRole()
+[ERROR]   location: variable user of type com.educonnect.entity.User
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/ComplianceServiceImpl.java:[32,51] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.educonnect.entity.ComplianceRecord
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/ComplianceServiceImpl.java:[33,34] cannot find symbol
+[ERROR]   symbol:   method getEntityId()
+[ERROR]   location: variable request of type com.educonnect.dto.request.ComplianceRecordRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/ComplianceServiceImpl.java:[33,62] cannot find symbol
+[ERROR]   symbol:   method getType()
+[ERROR]   location: variable request of type com.educonnect.dto.request.ComplianceRecordRequest
+[ERROR] /C:/Users/2478136/Downloads/educonnect-springboot (1)/educonnect/src/main/java/com/educonnect/service/impl/ComplianceServiceImpl.java:[34,32] cannot find symbol
+[ERROR]   symbol:   method getResult()
+[ERROR]   location: variable request of type com.educonnect.dto.request.ComplianceRecordRequest
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the '-e' switch
+[ERROR] Re-run Maven using the '-X' switch to enable verbose output
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/CompilationFailureException
