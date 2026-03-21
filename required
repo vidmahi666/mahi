@@ -1,0 +1,8 @@
+1. Validation while adding any thing
+2. Assessment module - add file uri for teacher assessment creation
+3. Postman api collection
+4. Pre populate database using command line runner for everything except student.
+5. Bad credentials exception, it is going to 500 status code. Set exceptions on its basis.
+6. Add logger slf4j
+7. Swagger ui check
+8. Remove refresh token in security
