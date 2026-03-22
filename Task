@@ -1,0 +1,170 @@
+✅ 1. Identity & Access Management
+(From PDF: User, AuditLog) �
+EduConnect - Digital Education & E-Learning Governance System 1.pdf None
+✔ Entities
+User
+AuditLog
+Role
+UserStatus
+✔ Repository
+UserRepository
+AuditLogRepository
+✔ DTO
+Request
+LoginRequest
+RegisterRequest
+AuditRequest
+Response
+AuthResponse
+AuditResponse
+UserResponse
+✔ Service
+AuthService
+UserService
+✔ Controller
+AuthController
+UserController
+✔ Security (IMPORTANT)
+JwtAuthFilter
+JwtUtils
+UserDetailsServiceImpl
+SecurityConfig
+👉 This module handles login, JWT, roles, authentication.
+✅ 2. Student Registration & Profile Management
+(PDF: Student, StudentDocument) �
+EduConnect - Digital Education & E-Learning Governance System 1.pdf None
+✔ Entities
+Student
+StudentDocument
+✔ Repository
+StudentRepository
+StudentDocumentRepository
+✔ DTO
+Request
+(Likely inside your structure or reused)
+Student-related request (if missing → you may need one)
+Response
+StudentResponse
+✔ Service
+StudentService
+✔ Controller
+StudentController
+StudentDocumentController
+✅ 3. Course & Curriculum Management
+(PDF: Course, Curriculum, Enrollment) �
+EduConnect - Digital Education & E-Learning Governance System 1.pdf None
+✔ Entities
+Course
+Curriculum
+Enrollment
+✔ Repository
+CourseRepository
+CurriculumRepository
+EnrollmentRepository
+✔ DTO
+Request
+CourseRequest
+EnrollmentRequest
+Response
+CourseResponse
+EnrollmentResponse
+✔ Service
+CourseService
+EnrollmentService
+✔ Controller
+CourseController
+EnrollmentController
+CurriculumController
+✅ 4. Digital Learning Content Delivery
+(PDF: Content, ContentAccess) �
+EduConnect - Digital Education & E-Learning Governance System 1.pdf None
+✔ Entities
+Content
+ContentAccess
+✔ Repository
+ContentRepository
+ContentAccessRepository
+✔ DTO
+Request
+ContentRequest
+Response
+ContentResponse
+✔ Service
+ContentService
+✔ Controller
+ContentController
+✅ 5. Assessment & Progress Tracking
+(PDF: Assessment, Submission, Progress) �
+EduConnect - Digital Education & E-Learning Governance System 1.pdf None
+✔ Entities
+Assessment
+Submission
+Progress
+✔ Repository
+AssessmentRepository
+SubmissionRepository
+ProgressRepository
+✔ DTO
+Request
+AssessmentRequest
+SubmissionRequest
+Response
+AssessmentResponse
+SubmissionResponse
+ProgressResponse
+✔ Service
+AssessmentService
+ProgressService
+✔ Controller
+AssessmentController
+ProgressController
+✅ 6. Compliance & Audit Management
+(PDF: ComplianceRecord, Audit) �
+EduConnect - Digital Education & E-Learning Governance System 1.pdf None
+✔ Entities
+ComplianceRecord
+Audit
+✔ Repository
+ComplianceRecordRepository
+AuditRepository
+✔ DTO
+Request
+ComplianceRecordRequest
+AuditRequest
+Response
+ComplianceRecordResponse
+AuditResponse
+✔ Service
+ComplianceService
+✔ Controller
+ComplianceController
+✅ 7. Reporting & Analytics
+(PDF: Report) �
+EduConnect - Digital Education & E-Learning Governance System 1.pdf None
+✔ Entity
+Report
+✔ Repository
+ReportRepository
+✔ DTO
+(No explicit request seen, but:)
+Response: ReportResponse
+✔ Service
+ReportService
+✔ Controller
+ReportController
+✅ 8. Notifications & Alerts
+(PDF: Notification) �
+EduConnect - Digital Education & E-Learning Governance System 1.pdf None
+✔ Entity
+Notification
+✔ Repository
+NotificationRepository
+✔ DTO
+Request
+NotificationRequest
+Response
+NotificationResponse
+✔ Service
+NotificationService
+✔ Controller
+NotificationController
