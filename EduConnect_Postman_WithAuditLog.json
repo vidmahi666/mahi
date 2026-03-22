@@ -1,0 +1,381 @@
+{
+  "info": {
+    "name": "EduConnect - com.cognizant.educonnect (With IAM Audit Logs)",
+    "description": "Complete API collection for EduConnect.\n\nTwo distinct audit concepts:\n1. IAM Audit Logs (/api/audit-logs) — tracks user identity & access events (login, registration, role changes)\n2. Compliance Audits (/api/compliance/audits) — formal governance audits of courses/programs\n\nHow to use:\n1. Run any Login in folder 01\n2. Token auto-saves to {{token}}\n3. All requests use it automatically\n\nPre-seeded credentials (password: password123):\n- admin@educonnect.com (ADMIN)\n- sarah.johnson@educonnect.com (TEACHER)\n- michael.chen@educonnect.com (TEACHER)\n- manager@educonnect.com (PROGRAM_MANAGER)\n- compliance@educonnect.com (COMPLIANCE_OFFICER)\n- auditor@educonnect.com (GOVERNMENT_AUDITOR)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "token",          "value": "", "type": "string" },
+    { "key": "userId",         "value": "1","type": "string" },
+    { "key": "studentId",      "value": "1","type": "string" },
+    { "key": "teacherUserId",  "value": "2","type": "string" },
+    { "key": "courseId",       "value": "1","type": "string" },
+    { "key": "enrollmentId",   "value": "1","type": "string" },
+    { "key": "contentId",      "value": "1","type": "string" },
+    { "key": "assessmentId",   "value": "1","type": "string" },
+    { "key": "submissionId",   "value": "1","type": "string" },
+    { "key": "notificationId", "value": "1","type": "string" },
+    { "key": "complianceId",   "value": "1","type": "string" },
+    { "key": "auditId",        "value": "1","type": "string" },
+    { "key": "auditLogId",     "value": "1","type": "string" },
+    { "key": "docId",          "value": "1","type": "string" }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [{ "key": "token", "value": "{{token}}", "type": "string" }]
+  },
+  "item": [
+    {
+      "name": "01 - Authentication (Public)",
+      "description": "No token required. Login saves token automatically.",
+      "item": [
+        {
+          "name": "Register - ADMIN",
+          "request": { "auth": {"type":"noauth"}, "method": "POST",
+            "header": [{"key":"Content-Type","value":"application/json"}],
+            "url": { "raw": "http://localhost:8081/api/auth/register", "protocol":"http","host":["localhost"],"port":"8081","path":["api","auth","register"] },
+            "body": { "mode": "raw", "raw": "{\n  \"name\": \"System Admin\",\n  \"email\": \"sysadmin@test.com\",\n  \"password\": \"password123\",\n  \"role\": \"ADMIN\"\n}" }
+          }
+        },
+        {
+          "name": "Register - TEACHER",
+          "request": { "auth": {"type":"noauth"}, "method": "POST",
+            "header": [{"key":"Content-Type","value":"application/json"}],
+            "url": { "raw": "http://localhost:8081/api/auth/register", "protocol":"http","host":["localhost"],"port":"8081","path":["api","auth","register"] },
+            "body": { "mode": "raw", "raw": "{\n  \"name\": \"Dr. Jane Smith\",\n  \"email\": \"jane.smith@test.com\",\n  \"password\": \"password123\",\n  \"role\": \"TEACHER\"\n}" }
+          }
+        },
+        {
+          "name": "Register - STUDENT",
+          "event": [{"listen":"test","script":{"exec":["var r=pm.response.json();if(r.data&&r.data.userId){pm.collectionVariables.set('userId',r.data.userId);console.log('userId saved:',r.data.userId);}"],"type":"text/javascript"}}],
+          "request": { "auth": {"type":"noauth"}, "method": "POST",
+            "header": [{"key":"Content-Type","value":"application/json"}],
+            "url": { "raw": "http://localhost:8081/api/auth/register", "protocol":"http","host":["localhost"],"port":"8081","path":["api","auth","register"] },
+            "body": { "mode": "raw", "raw": "{\n  \"name\": \"Alice Johnson\",\n  \"email\": \"alice@student.com\",\n  \"password\": \"password123\",\n  \"role\": \"STUDENT\",\n  \"phone\": \"9876543210\"\n}" }
+          }
+        },
+        {
+          "name": "Register - COMPLIANCE_OFFICER",
+          "request": { "auth": {"type":"noauth"}, "method": "POST",
+            "header": [{"key":"Content-Type","value":"application/json"}],
+            "url": { "raw": "http://localhost:8081/api/auth/register", "protocol":"http","host":["localhost"],"port":"8081","path":["api","auth","register"] },
+            "body": { "mode": "raw", "raw": "{\n  \"name\": \"Compliance Off\",\n  \"email\": \"co@test.com\",\n  \"password\": \"password123\",\n  \"role\": \"COMPLIANCE_OFFICER\"\n}" }
+          }
+        },
+        {
+          "name": "Login as ADMIN (saves token)",
+          "event": [{"listen":"test","script":{"exec":["var r=pm.response.json();if(r.data&&r.data.accessToken){pm.collectionVariables.set('token',r.data.accessToken);console.log('✅ ADMIN token saved');}"],"type":"text/javascript"}}],
+          "request": { "auth": {"type":"noauth"}, "method": "POST",
+            "header": [{"key":"Content-Type","value":"application/json"}],
+            "url": { "raw": "http://localhost:8081/api/auth/login", "protocol":"http","host":["localhost"],"port":"8081","path":["api","auth","login"] },
+            "body": { "mode": "raw", "raw": "{\n  \"email\": \"admin@educonnect.com\",\n  \"password\": \"password123\"\n}" }
+          }
+        },
+        {
+          "name": "Login as TEACHER (saves token)",
+          "event": [{"listen":"test","script":{"exec":["var r=pm.response.json();if(r.data&&r.data.accessToken){pm.collectionVariables.set('token',r.data.accessToken);pm.collectionVariables.set('teacherUserId',r.data.userId);console.log('✅ TEACHER token saved');}"],"type":"text/javascript"}}],
+          "request": { "auth": {"type":"noauth"}, "method": "POST",
+            "header": [{"key":"Content-Type","value":"application/json"}],
+            "url": { "raw": "http://localhost:8081/api/auth/login", "protocol":"http","host":["localhost"],"port":"8081","path":["api","auth","login"] },
+            "body": { "mode": "raw", "raw": "{\n  \"email\": \"sarah.johnson@educonnect.com\",\n  \"password\": \"password123\"\n}" }
+          }
+        },
+        {
+          "name": "Login as STUDENT (saves token)",
+          "event": [{"listen":"test","script":{"exec":["var r=pm.response.json();if(r.data&&r.data.accessToken){pm.collectionVariables.set('token',r.data.accessToken);console.log('✅ STUDENT token saved');}"],"type":"text/javascript"}}],
+          "request": { "auth": {"type":"noauth"}, "method": "POST",
+            "header": [{"key":"Content-Type","value":"application/json"}],
+            "url": { "raw": "http://localhost:8081/api/auth/login", "protocol":"http","host":["localhost"],"port":"8081","path":["api","auth","login"] },
+            "body": { "mode": "raw", "raw": "{\n  \"email\": \"alice@student.com\",\n  \"password\": \"password123\"\n}" }
+          }
+        },
+        {
+          "name": "Login as COMPLIANCE_OFFICER (saves token)",
+          "event": [{"listen":"test","script":{"exec":["var r=pm.response.json();if(r.data&&r.data.accessToken){pm.collectionVariables.set('token',r.data.accessToken);console.log('✅ COMPLIANCE token saved');}"],"type":"text/javascript"}}],
+          "request": { "auth": {"type":"noauth"}, "method": "POST",
+            "header": [{"key":"Content-Type","value":"application/json"}],
+            "url": { "raw": "http://localhost:8081/api/auth/login", "protocol":"http","host":["localhost"],"port":"8081","path":["api","auth","login"] },
+            "body": { "mode": "raw", "raw": "{\n  \"email\": \"compliance@educonnect.com\",\n  \"password\": \"password123\"\n}" }
+          }
+        },
+        {
+          "name": "Login - Wrong Password [expect 401]",
+          "request": { "auth": {"type":"noauth"}, "method": "POST",
+            "header": [{"key":"Content-Type","value":"application/json"}],
+            "url": { "raw": "http://localhost:8081/api/auth/login", "protocol":"http","host":["localhost"],"port":"8081","path":["api","auth","login"] },
+            "body": { "mode": "raw", "raw": "{\n  \"email\": \"admin@educonnect.com\",\n  \"password\": \"wrongpassword\"\n}" }
+          }
+        },
+        {
+          "name": "Login - Validation Error [expect 400]",
+          "request": { "auth": {"type":"noauth"}, "method": "POST",
+            "header": [{"key":"Content-Type","value":"application/json"}],
+            "url": { "raw": "http://localhost:8081/api/auth/login", "protocol":"http","host":["localhost"],"port":"8081","path":["api","auth","login"] },
+            "body": { "mode": "raw", "raw": "{\n  \"email\": \"not-valid\",\n  \"password\": \"\"\n}" }
+          }
+        }
+      ]
+    },
+    {
+      "name": "02 - IAM Audit Logs (ADMIN, COMPLIANCE_OFFICER, GOVERNMENT_AUDITOR)",
+      "description": "Identity & Access Management Audit Trail.\n\nTracks: User logins, registrations, role changes, account status changes, password resets, access events.\n\nIMPORTANT: This is DIFFERENT from Compliance Audits:\n- IAM Audit Logs (/api/audit-logs) = WHO did WHAT in the system (identity events)\n- Compliance Audits (/api/compliance/audits) = Formal governance audits of courses/programs\n\nRequired roles: ADMIN, COMPLIANCE_OFFICER, GOVERNMENT_AUDITOR",
+      "item": [
+        {
+          "name": "Get All IAM Audit Logs",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "http://localhost:8081/api/audit-logs", "protocol":"http","host":["localhost"],"port":"8081","path":["api","audit-logs"] }
+          }
+        },
+        {
+          "name": "Get IAM Audit Log by ID",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "http://localhost:8081/api/audit-logs/{{auditLogId}}", "protocol":"http","host":["localhost"],"port":"8081","path":["api","audit-logs","{{auditLogId}}"] }
+          }
+        },
+        {
+          "name": "Get IAM Audit Logs by User",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "http://localhost:8081/api/audit-logs/user/{{userId}}", "protocol":"http","host":["localhost"],"port":"8081","path":["api","audit-logs","user","{{userId}}"] }
+          }
+        },
+        {
+          "name": "Get IAM Audit Logs by Date Range",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8081/api/audit-logs/date-range?from=2024-01-01T00:00:00&to=2024-12-31T23:59:59",
+              "protocol":"http","host":["localhost"],"port":"8081","path":["api","audit-logs","date-range"],
+              "query": [
+                { "key": "from", "value": "2024-01-01T00:00:00" },
+                { "key": "to",   "value": "2024-12-31T23:59:59" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Record IAM Audit Log - USER_LOGIN",
+          "event": [{"listen":"test","script":{"exec":["var r=pm.response.json();if(r.data&&r.data.auditLogId){pm.collectionVariables.set('auditLogId',r.data.auditLogId);console.log('auditLogId saved:',r.data.auditLogId);}"],"type":"text/javascript"}}],
+          "request": {
+            "method": "POST",
+            "header": [{"key":"Content-Type","value":"application/json"}],
+            "url": { "raw": "http://localhost:8081/api/audit-logs", "protocol":"http","host":["localhost"],"port":"8081","path":["api","audit-logs"] },
+            "body": { "mode": "raw", "raw": "{\n  \"userId\": 1,\n  \"action\": \"USER_LOGIN\",\n  \"resource\": \"auth/login\"\n}" }
+          }
+        },
+        {
+          "name": "Record IAM Audit Log - USER_LOGOUT",
+          "request": {
+            "method": "POST",
+            "header": [{"key":"Content-Type","value":"application/json"}],
+            "url": { "raw": "http://localhost:8081/api/audit-logs", "protocol":"http","host":["localhost"],"port":"8081","path":["api","audit-logs"] },
+            "body": { "mode": "raw", "raw": "{\n  \"userId\": 1,\n  \"action\": \"USER_LOGOUT\",\n  \"resource\": \"auth/logout\"\n}" }
+          }
+        },
+        {
+          "name": "Record IAM Audit Log - USER_REGISTERED",
+          "request": {
+            "method": "POST",
+            "header": [{"key":"Content-Type","value":"application/json"}],
+            "url": { "raw": "http://localhost:8081/api/audit-logs", "protocol":"http","host":["localhost"],"port":"8081","path":["api","audit-logs"] },
+            "body": { "mode": "raw", "raw": "{\n  \"userId\": 1,\n  \"action\": \"USER_REGISTERED\",\n  \"resource\": \"users/1\"\n}" }
+          }
+        },
+        {
+          "name": "Record IAM Audit Log - ROLE_CHANGED",
+          "request": {
+            "method": "POST",
+            "header": [{"key":"Content-Type","value":"application/json"}],
+            "url": { "raw": "http://localhost:8081/api/audit-logs", "protocol":"http","host":["localhost"],"port":"8081","path":["api","audit-logs"] },
+            "body": { "mode": "raw", "raw": "{\n  \"userId\": 1,\n  \"action\": \"ROLE_CHANGED\",\n  \"resource\": \"users/3/role/COMPLIANCE_OFFICER\"\n}" }
+          }
+        },
+        {
+          "name": "Record IAM Audit Log - ACCOUNT_SUSPENDED",
+          "request": {
+            "method": "POST",
+            "header": [{"key":"Content-Type","value":"application/json"}],
+            "url": { "raw": "http://localhost:8081/api/audit-logs", "protocol":"http","host":["localhost"],"port":"8081","path":["api","audit-logs"] },
+            "body": { "mode": "raw", "raw": "{\n  \"userId\": 1,\n  \"action\": \"ACCOUNT_SUSPENDED\",\n  \"resource\": \"users/5/status\"\n}" }
+          }
+        },
+        {
+          "name": "Record IAM Audit Log - PASSWORD_CHANGED",
+          "request": {
+            "method": "POST",
+            "header": [{"key":"Content-Type","value":"application/json"}],
+            "url": { "raw": "http://localhost:8081/api/audit-logs", "protocol":"http","host":["localhost"],"port":"8081","path":["api","audit-logs"] },
+            "body": { "mode": "raw", "raw": "{\n  \"userId\": 1,\n  \"action\": \"PASSWORD_CHANGED\",\n  \"resource\": \"users/1/password\"\n}" }
+          }
+        },
+        {
+          "name": "Record IAM Audit Log - PERMISSION_DENIED",
+          "request": {
+            "method": "POST",
+            "header": [{"key":"Content-Type","value":"application/json"}],
+            "url": { "raw": "http://localhost:8081/api/audit-logs", "protocol":"http","host":["localhost"],"port":"8081","path":["api","audit-logs"] },
+            "body": { "mode": "raw", "raw": "{\n  \"userId\": 2,\n  \"action\": \"PERMISSION_DENIED\",\n  \"resource\": \"api/users\"\n}" }
+          }
+        },
+        {
+          "name": "Record IAM Audit Log - ACCOUNT_ACTIVATED",
+          "request": {
+            "method": "POST",
+            "header": [{"key":"Content-Type","value":"application/json"}],
+            "url": { "raw": "http://localhost:8081/api/audit-logs", "protocol":"http","host":["localhost"],"port":"8081","path":["api","audit-logs"] },
+            "body": { "mode": "raw", "raw": "{\n  \"userId\": 1,\n  \"action\": \"ACCOUNT_ACTIVATED\",\n  \"resource\": \"users/5/status\"\n}" }
+          }
+        },
+        {
+          "name": "Record IAM Audit Log - Validation Error [expect 400]",
+          "request": {
+            "method": "POST",
+            "header": [{"key":"Content-Type","value":"application/json"}],
+            "url": { "raw": "http://localhost:8081/api/audit-logs", "protocol":"http","host":["localhost"],"port":"8081","path":["api","audit-logs"] },
+            "body": { "mode": "raw", "raw": "{\n  \"userId\": null,\n  \"action\": \"\"\n}" }
+          }
+        },
+        {
+          "name": "Get Audit Log - Not Found [expect 404]",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "http://localhost:8081/api/audit-logs/99999", "protocol":"http","host":["localhost"],"port":"8081","path":["api","audit-logs","99999"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "03 - Users (ADMIN only)",
+      "item": [
+        { "name": "Get All Users", "request": { "method": "GET", "url": { "raw": "http://localhost:8081/api/users", "protocol":"http","host":["localhost"],"port":"8081","path":["api","users"] } } },
+        { "name": "Get User by ID", "request": { "method": "GET", "url": { "raw": "http://localhost:8081/api/users/{{userId}}", "protocol":"http","host":["localhost"],"port":"8081","path":["api","users","{{userId}}"] } } },
+        { "name": "Get Users by Role - TEACHER", "request": { "method": "GET", "url": { "raw": "http://localhost:8081/api/users/role/TEACHER", "protocol":"http","host":["localhost"],"port":"8081","path":["api","users","role","TEACHER"] } } },
+        { "name": "Get Users by Role - STUDENT", "request": { "method": "GET", "url": { "raw": "http://localhost:8081/api/users/role/STUDENT", "protocol":"http","host":["localhost"],"port":"8081","path":["api","users","role","STUDENT"] } } },
+        { "name": "Get Users by Role - ADMIN", "request": { "method": "GET", "url": { "raw": "http://localhost:8081/api/users/role/ADMIN", "protocol":"http","host":["localhost"],"port":"8081","path":["api","users","role","ADMIN"] } } },
+        { "name": "Update User Status - SUSPEND", "request": { "method": "PATCH", "url": { "raw": "http://localhost:8081/api/users/{{userId}}/status?status=SUSPENDED", "protocol":"http","host":["localhost"],"port":"8081","path":["api","users","{{userId}}","status"],"query":[{"key":"status","value":"SUSPENDED"}] } } },
+        { "name": "Update User Status - ACTIVATE", "request": { "method": "PATCH", "url": { "raw": "http://localhost:8081/api/users/{{userId}}/status?status=ACTIVE", "protocol":"http","host":["localhost"],"port":"8081","path":["api","users","{{userId}}","status"],"query":[{"key":"status","value":"ACTIVE"}] } } },
+        { "name": "Delete (Deactivate) User", "request": { "method": "DELETE", "url": { "raw": "http://localhost:8081/api/users/{{userId}}", "protocol":"http","host":["localhost"],"port":"8081","path":["api","users","{{userId}}"] } } }
+      ]
+    },
+    {
+      "name": "04 - Students",
+      "item": [
+        { "name": "Get All Students", "request": { "method": "GET", "url": { "raw": "http://localhost:8081/api/students", "protocol":"http","host":["localhost"],"port":"8081","path":["api","students"] } } },
+        { "name": "Get Student by ID", "event": [{"listen":"test","script":{"exec":["var r=pm.response.json();if(r.data&&r.data.studentId){pm.collectionVariables.set('studentId',r.data.studentId);}"],"type":"text/javascript"}}], "request": { "method": "GET", "url": { "raw": "http://localhost:8081/api/students/{{studentId}}", "protocol":"http","host":["localhost"],"port":"8081","path":["api","students","{{studentId}}"] } } },
+        { "name": "Get Student by User ID", "event": [{"listen":"test","script":{"exec":["var r=pm.response.json();if(r.data&&r.data.studentId){pm.collectionVariables.set('studentId',r.data.studentId);console.log('studentId saved:',r.data.studentId);}"],"type":"text/javascript"}}], "request": { "method": "GET", "url": { "raw": "http://localhost:8081/api/students/user/{{userId}}", "protocol":"http","host":["localhost"],"port":"8081","path":["api","students","user","{{userId}}"] } } }
+      ]
+    },
+    {
+      "name": "05 - Student Documents",
+      "item": [
+        { "name": "Get Documents by Student", "request": { "method": "GET", "url": { "raw": "http://localhost:8081/api/student-documents/student/{{studentId}}", "protocol":"http","host":["localhost"],"port":"8081","path":["api","student-documents","student","{{studentId}}"] } } },
+        { "name": "Upload ID Proof", "event": [{"listen":"test","script":{"exec":["var r=pm.response.json();if(r.data&&r.data.documentId){pm.collectionVariables.set('docId',r.data.documentId);}"],"type":"text/javascript"}}], "request": { "method": "POST", "url": { "raw": "http://localhost:8081/api/student-documents/student/{{studentId}}?docType=ID_PROOF&fileUri=https://s3.amazonaws.com/docs/id.jpg", "protocol":"http","host":["localhost"],"port":"8081","path":["api","student-documents","student","{{studentId}}"],"query":[{"key":"docType","value":"ID_PROOF"},{"key":"fileUri","value":"https://s3.amazonaws.com/docs/id.jpg"}] } } },
+        { "name": "Verify Document - VERIFIED", "request": { "method": "PATCH", "url": { "raw": "http://localhost:8081/api/student-documents/{{docId}}/verify?status=VERIFIED", "protocol":"http","host":["localhost"],"port":"8081","path":["api","student-documents","{{docId}}","verify"],"query":[{"key":"status","value":"VERIFIED"}] } } }
+      ]
+    },
+    {
+      "name": "06 - Courses",
+      "item": [
+        { "name": "Get All Courses", "request": { "method": "GET", "url": { "raw": "http://localhost:8081/api/courses", "protocol":"http","host":["localhost"],"port":"8081","path":["api","courses"] } } },
+        { "name": "Get Course by ID", "request": { "method": "GET", "url": { "raw": "http://localhost:8081/api/courses/{{courseId}}", "protocol":"http","host":["localhost"],"port":"8081","path":["api","courses","{{courseId}}"] } } },
+        { "name": "Search Courses", "request": { "method": "GET", "url": { "raw": "http://localhost:8081/api/courses/search?keyword=Java", "protocol":"http","host":["localhost"],"port":"8081","path":["api","courses","search"],"query":[{"key":"keyword","value":"Java"}] } } },
+        { "name": "Get Courses by Teacher", "request": { "method": "GET", "url": { "raw": "http://localhost:8081/api/courses/teacher/{{teacherUserId}}", "protocol":"http","host":["localhost"],"port":"8081","path":["api","courses","teacher","{{teacherUserId}}"] } } },
+        { "name": "Create Course", "event": [{"listen":"test","script":{"exec":["var r=pm.response.json();if(r.data&&r.data.courseId){pm.collectionVariables.set('courseId',r.data.courseId);console.log('courseId saved:',r.data.courseId);}"],"type":"text/javascript"}}], "request": { "method": "POST", "header": [{"key":"Content-Type","value":"application/json"}], "url": { "raw": "http://localhost:8081/api/courses", "protocol":"http","host":["localhost"],"port":"8081","path":["api","courses"] }, "body": { "mode": "raw", "raw": "{\n  \"title\": \"Advanced Algorithms\",\n  \"description\": \"Deep dive into sorting, searching and graph algorithms.\",\n  \"teacherId\": 2,\n  \"startDate\": \"2024-05-01\",\n  \"endDate\": \"2024-10-31\"\n}" } } },
+        { "name": "Update Course", "request": { "method": "PUT", "header": [{"key":"Content-Type","value":"application/json"}], "url": { "raw": "http://localhost:8081/api/courses/{{courseId}}", "protocol":"http","host":["localhost"],"port":"8081","path":["api","courses","{{courseId}}"] }, "body": { "mode": "raw", "raw": "{\n  \"title\": \"Advanced Algorithms - Updated\",\n  \"description\": \"Updated description.\",\n  \"teacherId\": 2,\n  \"startDate\": \"2024-05-01\",\n  \"endDate\": \"2024-11-30\"\n}" } } },
+        { "name": "Archive Course", "request": { "method": "DELETE", "url": { "raw": "http://localhost:8081/api/courses/{{courseId}}", "protocol":"http","host":["localhost"],"port":"8081","path":["api","courses","{{courseId}}"] } } }
+      ]
+    },
+    {
+      "name": "07 - Curriculum",
+      "item": [
+        { "name": "Get Curriculum by Course", "request": { "method": "GET", "url": { "raw": "http://localhost:8081/api/curriculum/course/{{courseId}}", "protocol":"http","host":["localhost"],"port":"8081","path":["api","curriculum","course","{{courseId}}"] } } },
+        { "name": "Create/Update Curriculum", "request": { "method": "POST", "header": [{"key":"Content-Type","value":"application/json"}], "url": { "raw": "http://localhost:8081/api/curriculum/course/{{courseId}}", "protocol":"http","host":["localhost"],"port":"8081","path":["api","curriculum","course","{{courseId}}"] }, "body": { "mode": "raw", "raw": "{\"weeks\":[{\"week\":1,\"topic\":\"Introduction\"},{\"week\":2,\"topic\":\"Core Concepts\"},{\"week\":3,\"topic\":\"Advanced Topics\"}]}" } } }
+      ]
+    },
+    {
+      "name": "08 - Enrollments",
+      "item": [
+        { "name": "Enroll Student in Course", "event": [{"listen":"test","script":{"exec":["var r=pm.response.json();if(r.data&&r.data.enrollmentId){pm.collectionVariables.set('enrollmentId',r.data.enrollmentId);console.log('enrollmentId saved:',r.data.enrollmentId);}"],"type":"text/javascript"}}], "request": { "method": "POST", "header": [{"key":"Content-Type","value":"application/json"}], "url": { "raw": "http://localhost:8081/api/enrollments", "protocol":"http","host":["localhost"],"port":"8081","path":["api","enrollments"] }, "body": { "mode": "raw", "raw": "{\n  \"studentId\": 1,\n  \"courseId\": 1\n}" } } },
+        { "name": "Get Enrollments by Student", "request": { "method": "GET", "url": { "raw": "http://localhost:8081/api/enrollments/student/{{studentId}}", "protocol":"http","host":["localhost"],"port":"8081","path":["api","enrollments","student","{{studentId}}"] } } },
+        { "name": "Get Enrollments by Course", "request": { "method": "GET", "url": { "raw": "http://localhost:8081/api/enrollments/course/{{courseId}}", "protocol":"http","host":["localhost"],"port":"8081","path":["api","enrollments","course","{{courseId}}"] } } },
+        { "name": "Update Enrollment Status - COMPLETED", "request": { "method": "PATCH", "url": { "raw": "http://localhost:8081/api/enrollments/{{enrollmentId}}/status?status=COMPLETED", "protocol":"http","host":["localhost"],"port":"8081","path":["api","enrollments","{{enrollmentId}}","status"],"query":[{"key":"status","value":"COMPLETED"}] } } },
+        { "name": "Unenroll Student", "request": { "method": "DELETE", "url": { "raw": "http://localhost:8081/api/enrollments/{{enrollmentId}}", "protocol":"http","host":["localhost"],"port":"8081","path":["api","enrollments","{{enrollmentId}}"] } } }
+      ]
+    },
+    {
+      "name": "09 - Content",
+      "item": [
+        { "name": "Get Content by Course", "request": { "method": "GET", "url": { "raw": "http://localhost:8081/api/content/course/{{courseId}}", "protocol":"http","host":["localhost"],"port":"8081","path":["api","content","course","{{courseId}}"] } } },
+        { "name": "Get Content by ID", "request": { "method": "GET", "url": { "raw": "http://localhost:8081/api/content/{{contentId}}", "protocol":"http","host":["localhost"],"port":"8081","path":["api","content","{{contentId}}"] } } },
+        { "name": "Upload VIDEO Content", "event": [{"listen":"test","script":{"exec":["var r=pm.response.json();if(r.data&&r.data.contentId){pm.collectionVariables.set('contentId',r.data.contentId);console.log('contentId saved:',r.data.contentId);}"],"type":"text/javascript"}}], "request": { "method": "POST", "header": [{"key":"Content-Type","value":"application/json"}], "url": { "raw": "http://localhost:8081/api/content", "protocol":"http","host":["localhost"],"port":"8081","path":["api","content"] }, "body": { "mode": "raw", "raw": "{\n  \"courseId\": 1,\n  \"title\": \"Week 1 - Introduction\",\n  \"type\": \"VIDEO\",\n  \"fileUri\": \"https://cdn.educonnect.com/week1.mp4\",\n  \"sortOrder\": 1\n}" } } },
+        { "name": "Upload PDF Content", "request": { "method": "POST", "header": [{"key":"Content-Type","value":"application/json"}], "url": { "raw": "http://localhost:8081/api/content", "protocol":"http","host":["localhost"],"port":"8081","path":["api","content"] }, "body": { "mode": "raw", "raw": "{\n  \"courseId\": 1,\n  \"title\": \"Week 1 - Notes\",\n  \"type\": \"PDF\",\n  \"fileUri\": \"https://cdn.educonnect.com/week1-notes.pdf\",\n  \"sortOrder\": 2\n}" } } },
+        { "name": "Track Content Access", "request": { "method": "POST", "url": { "raw": "http://localhost:8081/api/content/{{contentId}}/access/{{studentId}}", "protocol":"http","host":["localhost"],"port":"8081","path":["api","content","{{contentId}}","access","{{studentId}}"] } } },
+        { "name": "Archive Content", "request": { "method": "DELETE", "url": { "raw": "http://localhost:8081/api/content/{{contentId}}", "protocol":"http","host":["localhost"],"port":"8081","path":["api","content","{{contentId}}"] } } }
+      ]
+    },
+    {
+      "name": "10 - Assessments",
+      "item": [
+        { "name": "Get Assessments by Course", "request": { "method": "GET", "url": { "raw": "http://localhost:8081/api/assessments/course/{{courseId}}", "protocol":"http","host":["localhost"],"port":"8081","path":["api","assessments","course","{{courseId}}"] } } },
+        { "name": "Get Assessment by ID", "request": { "method": "GET", "url": { "raw": "http://localhost:8081/api/assessments/{{assessmentId}}", "protocol":"http","host":["localhost"],"port":"8081","path":["api","assessments","{{assessmentId}}"] } } },
+        { "name": "Create EXAM with fileUri", "event": [{"listen":"test","script":{"exec":["var r=pm.response.json();if(r.data&&r.data.assessmentId){pm.collectionVariables.set('assessmentId',r.data.assessmentId);console.log('assessmentId saved:',r.data.assessmentId);}"],"type":"text/javascript"}}], "request": { "method": "POST", "header": [{"key":"Content-Type","value":"application/json"}], "url": { "raw": "http://localhost:8081/api/assessments", "protocol":"http","host":["localhost"],"port":"8081","path":["api","assessments"] }, "body": { "mode": "raw", "raw": "{\n  \"courseId\": 1,\n  \"title\": \"Midterm Exam\",\n  \"type\": \"EXAM\",\n  \"fileUri\": \"https://cdn.educonnect.com/midterm.pdf\",\n  \"instructions\": \"Answer all questions. Time: 2 hours.\",\n  \"dueDate\": \"2024-07-15\",\n  \"maxScore\": 100,\n  \"passingScore\": 60\n}" } } },
+        { "name": "Create ASSIGNMENT", "request": { "method": "POST", "header": [{"key":"Content-Type","value":"application/json"}], "url": { "raw": "http://localhost:8081/api/assessments", "protocol":"http","host":["localhost"],"port":"8081","path":["api","assessments"] }, "body": { "mode": "raw", "raw": "{\n  \"courseId\": 1,\n  \"title\": \"Programming Assignment 1\",\n  \"type\": \"ASSIGNMENT\",\n  \"fileUri\": \"https://cdn.educonnect.com/assignment1.pdf\",\n  \"instructions\": \"Implement in Java. Submit ZIP.\",\n  \"dueDate\": \"2024-06-30\",\n  \"maxScore\": 50,\n  \"passingScore\": 25\n}" } } },
+        { "name": "Activate Assessment", "request": { "method": "PATCH", "url": { "raw": "http://localhost:8081/api/assessments/{{assessmentId}}/status?status=ACTIVE", "protocol":"http","host":["localhost"],"port":"8081","path":["api","assessments","{{assessmentId}}","status"],"query":[{"key":"status","value":"ACTIVE"}] } } },
+        { "name": "Archive Assessment", "request": { "method": "DELETE", "url": { "raw": "http://localhost:8081/api/assessments/{{assessmentId}}", "protocol":"http","host":["localhost"],"port":"8081","path":["api","assessments","{{assessmentId}}"] } } }
+      ]
+    },
+    {
+      "name": "11 - Submissions",
+      "item": [
+        { "name": "Submit Assessment (STUDENT)", "event": [{"listen":"test","script":{"exec":["var r=pm.response.json();if(r.data&&r.data.submissionId){pm.collectionVariables.set('submissionId',r.data.submissionId);console.log('submissionId saved:',r.data.submissionId);}"],"type":"text/javascript"}}], "request": { "method": "POST", "header": [{"key":"Content-Type","value":"application/json"}], "url": { "raw": "http://localhost:8081/api/assessments/submit", "protocol":"http","host":["localhost"],"port":"8081","path":["api","assessments","submit"] }, "body": { "mode": "raw", "raw": "{\n  \"assessmentId\": 1,\n  \"studentId\": 1,\n  \"fileUri\": \"https://s3.amazonaws.com/submissions/alice-answer.pdf\",\n  \"remarks\": \"Completed all sections.\"\n}" } } },
+        { "name": "Get Submissions by Assessment", "request": { "method": "GET", "url": { "raw": "http://localhost:8081/api/assessments/{{assessmentId}}/submissions", "protocol":"http","host":["localhost"],"port":"8081","path":["api","assessments","{{assessmentId}}","submissions"] } } },
+        { "name": "Get Submissions by Student", "request": { "method": "GET", "url": { "raw": "http://localhost:8081/api/assessments/submissions/student/{{studentId}}", "protocol":"http","host":["localhost"],"port":"8081","path":["api","assessments","submissions","student","{{studentId}}"] } } },
+        { "name": "Grade Submission - PASS", "request": { "method": "PATCH", "header": [{"key":"Content-Type","value":"application/json"}], "url": { "raw": "http://localhost:8081/api/assessments/submissions/{{submissionId}}/grade", "protocol":"http","host":["localhost"],"port":"8081","path":["api","assessments","submissions","{{submissionId}}","grade"] }, "body": { "mode": "raw", "raw": "{\n  \"score\": 85,\n  \"feedback\": \"Excellent work!\"\n}" } } }
+      ]
+    },
+    {
+      "name": "12 - Progress",
+      "item": [
+        { "name": "Get Progress by Student", "request": { "method": "GET", "url": { "raw": "http://localhost:8081/api/progress/student/{{studentId}}", "protocol":"http","host":["localhost"],"port":"8081","path":["api","progress","student","{{studentId}}"] } } },
+        { "name": "Get Progress - Student + Course", "request": { "method": "GET", "url": { "raw": "http://localhost:8081/api/progress/student/{{studentId}}/course/{{courseId}}", "protocol":"http","host":["localhost"],"port":"8081","path":["api","progress","student","{{studentId}}","course","{{courseId}}"] } } },
+        { "name": "Update Progress - 50%", "request": { "method": "PUT", "url": { "raw": "http://localhost:8081/api/progress/student/{{studentId}}/course/{{courseId}}?completionPercentage=50.0", "protocol":"http","host":["localhost"],"port":"8081","path":["api","progress","student","{{studentId}}","course","{{courseId}}"],"query":[{"key":"completionPercentage","value":"50.0"}] } } },
+        { "name": "Update Progress - 100% (auto-COMPLETED)", "request": { "method": "PUT", "url": { "raw": "http://localhost:8081/api/progress/student/{{studentId}}/course/{{courseId}}?completionPercentage=100.0", "protocol":"http","host":["localhost"],"port":"8081","path":["api","progress","student","{{studentId}}","course","{{courseId}}"],"query":[{"key":"completionPercentage","value":"100.0"}] } } }
+      ]
+    },
+    {
+      "name": "13 - Notifications",
+      "item": [
+        { "name": "Send Notification - COURSE", "event": [{"listen":"test","script":{"exec":["var r=pm.response.json();if(r.data&&r.data.notificationId){pm.collectionVariables.set('notificationId',r.data.notificationId);}"],"type":"text/javascript"}}], "request": { "method": "POST", "header": [{"key":"Content-Type","value":"application/json"}], "url": { "raw": "http://localhost:8081/api/notifications", "protocol":"http","host":["localhost"],"port":"8081","path":["api","notifications"] }, "body": { "mode": "raw", "raw": "{\n  \"userId\": 1,\n  \"entityId\": 1,\n  \"message\": \"New content added to your enrolled course.\",\n  \"category\": \"COURSE\"\n}" } } },
+        { "name": "Get Notifications by User", "request": { "method": "GET", "url": { "raw": "http://localhost:8081/api/notifications/user/{{userId}}", "protocol":"http","host":["localhost"],"port":"8081","path":["api","notifications","user","{{userId}}"] } } },
+        { "name": "Get Unread Count", "request": { "method": "GET", "url": { "raw": "http://localhost:8081/api/notifications/user/{{userId}}/unread-count", "protocol":"http","host":["localhost"],"port":"8081","path":["api","notifications","user","{{userId}}","unread-count"] } } },
+        { "name": "Mark as Read", "request": { "method": "PATCH", "url": { "raw": "http://localhost:8081/api/notifications/{{notificationId}}/read", "protocol":"http","host":["localhost"],"port":"8081","path":["api","notifications","{{notificationId}}","read"] } } }
+      ]
+    },
+    {
+      "name": "14 - Compliance & Governance Audits (COMPLIANCE_OFFICER, AUDITOR, ADMIN)",
+      "description": "Formal governance audits of courses and programs.\n\nNOTE: These are DIFFERENT from IAM Audit Logs:\n- Compliance Audits (/api/compliance/audits) = Formal planned audits of course/program compliance\n- IAM Audit Logs (/api/audit-logs) = Identity & access events (logins, role changes)\n\nRequired roles: COMPLIANCE_OFFICER, GOVERNMENT_AUDITOR, ADMIN",
+      "item": [
+        { "name": "Get All Compliance Records", "request": { "method": "GET", "url": { "raw": "http://localhost:8081/api/compliance/records", "protocol":"http","host":["localhost"],"port":"8081","path":["api","compliance","records"] } } },
+        { "name": "Get Compliance Records by Entity", "request": { "method": "GET", "url": { "raw": "http://localhost:8081/api/compliance/records/entity/{{courseId}}", "protocol":"http","host":["localhost"],"port":"8081","path":["api","compliance","records","entity","{{courseId}}"] } } },
+        { "name": "Create Compliance Record - COURSE COMPLIANT", "event": [{"listen":"test","script":{"exec":["var r=pm.response.json();if(r.data&&r.data.complianceId){pm.collectionVariables.set('complianceId',r.data.complianceId);}"],"type":"text/javascript"}}], "request": { "method": "POST", "header": [{"key":"Content-Type","value":"application/json"}], "url": { "raw": "http://localhost:8081/api/compliance/records", "protocol":"http","host":["localhost"],"port":"8081","path":["api","compliance","records"] }, "body": { "mode": "raw", "raw": "{\n  \"entityId\": 1,\n  \"type\": \"COURSE\",\n  \"result\": \"COMPLIANT\",\n  \"notes\": \"Reviewed against EDU-POL-001. All requirements met.\"\n}" } } },
+        { "name": "Create Compliance Record - NON_COMPLIANT", "request": { "method": "POST", "header": [{"key":"Content-Type","value":"application/json"}], "url": { "raw": "http://localhost:8081/api/compliance/records", "protocol":"http","host":["localhost"],"port":"8081","path":["api","compliance","records"] }, "body": { "mode": "raw", "raw": "{\n  \"entityId\": 2,\n  \"type\": \"ASSESSMENT\",\n  \"result\": \"NON_COMPLIANT\",\n  \"notes\": \"Missing accessibility guidelines per EDU-POL-004.\"\n}" } } },
+        { "name": "Get All Governance Audits", "request": { "method": "GET", "url": { "raw": "http://localhost:8081/api/compliance/audits", "protocol":"http","host":["localhost"],"port":"8081","path":["api","compliance","audits"] } } },
+        { "name": "Create Governance Audit", "event": [{"listen":"test","script":{"exec":["var r=pm.response.json();if(r.data&&r.data.auditId){pm.collectionVariables.set('auditId',r.data.auditId);console.log('auditId saved:',r.data.auditId);}"],"type":"text/javascript"}}], "request": { "method": "POST", "header": [{"key":"Content-Type","value":"application/json"}], "url": { "raw": "http://localhost:8081/api/compliance/audits", "protocol":"http","host":["localhost"],"port":"8081","path":["api","compliance","audits"] }, "body": { "mode": "raw", "raw": "{\n  \"officerId\": 5,\n  \"scope\": \"Q2 2024 - Full Course Content Audit\",\n  \"findings\": \"12 courses reviewed. 10 compliant. 2 need documentation updates.\"\n}" } } },
+        { "name": "Update Governance Audit Status - COMPLETED", "request": { "method": "PATCH", "url": { "raw": "http://localhost:8081/api/compliance/audits/{{auditId}}/status?status=COMPLETED", "protocol":"http","host":["localhost"],"port":"8081","path":["api","compliance","audits","{{auditId}}","status"],"query":[{"key":"status","value":"COMPLETED"}] } } },
+        { "name": "Update Governance Audit Status - CLOSED", "request": { "method": "PATCH", "url": { "raw": "http://localhost:8081/api/compliance/audits/{{auditId}}/status?status=CLOSED", "protocol":"http","host":["localhost"],"port":"8081","path":["api","compliance","audits","{{auditId}}","status"],"query":[{"key":"status","value":"CLOSED"}] } } }
+      ]
+    },
+    {
+      "name": "15 - Reports (ADMIN, PROGRAM_MANAGER)",
+      "item": [
+        { "name": "Get Dashboard Metrics", "request": { "method": "GET", "url": { "raw": "http://localhost:8081/api/reports/dashboard", "protocol":"http","host":["localhost"],"port":"8081","path":["api","reports","dashboard"] } } },
+        { "name": "Generate COURSE Report", "request": { "method": "GET", "url": { "raw": "http://localhost:8081/api/reports/generate/COURSE", "protocol":"http","host":["localhost"],"port":"8081","path":["api","reports","generate","COURSE"] } } },
+        { "name": "Generate STUDENT Report", "request": { "method": "GET", "url": { "raw": "http://localhost:8081/api/reports/generate/STUDENT", "protocol":"http","host":["localhost"],"port":"8081","path":["api","reports","generate","STUDENT"] } } },
+        { "name": "Generate COMPLIANCE Report", "request": { "method": "GET", "url": { "raw": "http://localhost:8081/api/reports/generate/COMPLIANCE", "protocol":"http","host":["localhost"],"port":"8081","path":["api","reports","generate","COMPLIANCE"] } } },
+        { "name": "Generate ASSESSMENT Report", "request": { "method": "GET", "url": { "raw": "http://localhost:8081/api/reports/generate/ASSESSMENT", "protocol":"http","host":["localhost"],"port":"8081","path":["api","reports","generate","ASSESSMENT"] } } }
+      ]
+    }
+  ]
+}
